@@ -60,8 +60,7 @@ def list_all(args): #list all tasks
         return
 
     for i, task in enumerate(tasks):
-        status = "Done!" if task.status else "Not done yet! You got this!"
-        print(f"{i + 1}. [{status}] {task.title} - {task.description} (Status: {task.status})")
+        print(f"{i + 1}. {task.title} - {task.description} (Status: {task.status})")
 
 def list_done(args): #list finished tasks
     tasks = load_tasks()
@@ -168,11 +167,11 @@ parser_list.set_defaults(func=list_all)
 parser_list = subparsers.add_parser("listdone")
 parser_list.set_defaults(func=list_done)
 
-# List done command
+# List in progress command
 parser_list = subparsers.add_parser("listinprogress")
 parser_list.set_defaults(func=list_inprogress)
 
-# List done command
+# List not done command
 parser_list = subparsers.add_parser("listnotdone")
 parser_list.set_defaults(func=list_notdone)
 
