@@ -1,6 +1,7 @@
 # TaskTrackerCLI
 First Python Project! <hr>
-<h>Commands:<h\>
+<body>
+<div><h1>Commands:<h1\><div\><br>
     Adding a task: add (Task name) --description (Task description) <br>
     Setting a task to in progress: setinprogress (index of task when listing all) <br>
     Completing a task: complete (index of task when listing all) <br>
@@ -9,4 +10,6 @@ First Python Project! <hr>
     Listing all finished tasks: listdone <br>
     Listing all in progress tasks: listinprogress <br>
     Listing all not started tasks: listnotdone <br>
+<body\>
+
 
