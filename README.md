@@ -4,7 +4,6 @@ First Python Project! <hr>
 <div>
     <h3>Commands:</h3>
     </div>
-    <br>
     Adding a task: add (Task name) --description (Task description) <br>
     Setting a task to in progress: setinprogress (index of task when listing all) <br>
     Completing a task: complete (index of task when listing all) <br>
