@@ -156,8 +156,23 @@ subparsers = parser.add_subparsers()
 parser_add = subparsers.add_parser("add")
 parser_add.add_argument("title")
 parser_add.add_argument("--description", default="")
-parser_add.add_argument("--status", default=None)
 parser_add.set_defaults(func=add_task)
+
+# Set to in progress command
+parser_inprogress = subparsers.add_parser("setinprogress")
+parser_inprogress.add_argument("index", type=int)
+parser_inprogress.set_defaults(func=to_inprogress)
+
+# Complete command
+parser_complete = subparsers.add_parser("complete")
+parser_complete.add_argument("index", type=int)
+parser_complete.set_defaults(func=complete_task)
+
+# Delete command
+parser_delete = subparsers.add_parser("delete")
+parser_delete.add_argument("index", type=int)
+parser_delete.set_defaults(func=delete_task)
+
 
 # List all command
 parser_list = subparsers.add_parser("listall")
@@ -174,21 +189,6 @@ parser_list.set_defaults(func=list_inprogress)
 # List not done command
 parser_list = subparsers.add_parser("listnotdone")
 parser_list.set_defaults(func=list_notdone)
-
-# Set to in progress command
-parser_inprogress = subparsers.add_parser("setinprogress")
-parser_inprogress.add_argument("index", type=int)
-parser_inprogress.set_defaults(func=to_inprogress)
-
-# Complete command
-parser_complete = subparsers.add_parser("complete")
-parser_complete.add_argument("index", type=int)
-parser_complete.set_defaults(func=complete_task)
-
-# Delete command
-parser_delete = subparsers.add_parser("delete")
-parser_delete.add_argument("index", type=int)
-parser_delete.set_defaults(func=delete_task)
 
 # Run
 args = parser.parse_args()
